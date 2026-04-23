@@ -1,20 +1,35 @@
-function Navbar () {
-    return (
-        <div className="container mx-auto flex justify-between items-center py-2">
-            <img src="/logo.png" alt="logo"height="40px" width="106px" />
-            
-            <div className="flex gap-4 items-center">
-                <a href="#home" className="hover:underline">Home</a>
-                <a href="#about" className="hover:underline">About me</a>
-                <a href="#skills" className="hover:underline">Skills</a>
-                <a href="#portfolio" className="hover:underline">Portfolio</a>
-            </div>
+"use client";
 
-            <button className="border border-[#000000] px-8 py-4 text-[#ff0303] rounded-md">
-                Contact Me
-            </button>
-        </div>
+import { useState, useEffect } from "react";
+
+function Navbar() {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    return (
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "nav-scrolled" : "bg-transparent"}`}>
+            <div className="container mx-auto flex justify-between items-center py-4 px-4">
+                <a href="#home" className="font-mono text-xl font-bold tracking-tight">
+                    <span className="text-red-600">TW</span>
+                    <span className="text-white animate-pulse">_</span>
+                </a>
+
+                <div className="flex gap-6 items-center">
+                    <a href="#home"      className="nav-link">./home</a>
+                    <a href="#about"     className="nav-link">./about</a>
+                    <a href="#skills"    className="nav-link">./skills</a>
+                    <a href="#portfolio" className="nav-link">./portfolio</a>
+                </div>
+
+                <a href="#contact" className="btn-red-outline">contact()</a>
+            </div>
+        </nav>
     );
 }
 
-export default Navbar
+export default Navbar;

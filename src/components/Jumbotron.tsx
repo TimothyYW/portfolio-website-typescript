@@ -1,30 +1,57 @@
-function Jumbotron(){
-    return(
-    <div id="home" className="bg-[black] text-white ">
-        <div className="container mx-auto py-24 gap-12">
-            <div className="grid grid-cols-2">
-                {/* Left */}
-                <div className="flex flex-col justify-center space-y-4">
-                    <p className="text-xl font-bold">Hey, my name is Timothy Y Wewengkang</p>
-                    <h1 className="text-4xl">I am a <span className="text-[red]">Web Development student</span></h1>
-                    <p className="text-xl">I am studying fronted end and backend development</p>
+import Image from "next/image";
 
-                    <a
-                        href="#contact"
-                        aria-label="Go to contact section"
-                        className="inline-block border border-white text-white px-8 py-4 rounded-lg w-fit transition transform hover:scale-105 hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-                    >
-                        Get In Touch
-                    </a>
-                </div>
-                {/* Right */}
-                <div>
-                    <img className="justify-center"src="/thumbnail.png" alt="thumbnail" />
+function Jumbotron() {
+    return (
+        <div id="home" className="relative min-h-screen bg-black text-white flex items-center grid-bg overflow-hidden">
+            {/* Vertical red accent line */}
+            <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-red-600 to-transparent opacity-60" />
+
+            {/* Corner bracket decorations */}
+            <div className="absolute top-24 right-8 w-24 h-24 border-t border-r border-red-600/20" />
+            <div className="absolute bottom-12 left-8 w-24 h-24 border-b border-l border-red-600/20" />
+
+            <div className="container mx-auto px-4 py-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    {/* Left — text */}
+                    <div className="space-y-6">
+                        <p className="section-label">&gt; Hello, World!</p>
+                        <h1 className="text-5xl font-bold leading-tight">
+                            I&apos;m <span className="text-red-500">Timothy</span>
+                            <br />Wewengkang
+                        </h1>
+                        <p className="font-mono text-gray-400 text-lg border-l-2 border-red-600 pl-4">
+                            Web Development Student
+                        </p>
+                        <p className="text-gray-400 max-w-md leading-relaxed">
+                            Studying frontend and backend development — building fast,
+                            functional, and well-designed web experiences.
+                        </p>
+                        <div className="flex flex-wrap gap-4 pt-2">
+                            <a href="#contact"   className="btn-primary">Get In Touch</a>
+                            <a href="#portfolio" className="btn-ghost">View Work</a>
+                        </div>
+                    </div>
+
+                    {/* Right — image */}
+                    <div className="flex justify-center">
+                        <div className="relative">
+                            {/* Offset shadow frame */}
+                            <div className="absolute inset-0 border border-red-600/30 translate-x-4 translate-y-4" />
+                            <div className="relative w-80 h-80 border border-[#1f1f1f]">
+                                <Image
+                                    src="/thumbnail.png"
+                                    alt="Timothy Wewengkang"
+                                    fill
+                                    className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                                    priority
+                                />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     );
 }
 
-export default Jumbotron
+export default Jumbotron;

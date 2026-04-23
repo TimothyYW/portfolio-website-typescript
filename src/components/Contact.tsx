@@ -1,87 +1,119 @@
-import { FaWhatsapp, FaFacebookF, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { FaWhatsapp, FaFacebookF, FaLinkedin, FaGithub, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
+import { MdEmail, MdPhone } from "react-icons/md";
 
-function Contact () {
+function Contact() {
     return (
-        <div id="contact" className="bg-[black] text-white mx-auto py-24">
-            <div className="container mx-auto py-24 gap-12">
-                <p className="text-4xl font-bold">Contact Me</p>
-                <ul className="flex items-center gap-6">
-                    <li>
-                        <a
-                            href="https://wa.me/6282245659898"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Open WhatsApp chat with 082245659898 in a new tab"
-                            title="Chat on WhatsApp"
-                            className="inline-flex items-center gap-3"
-                        >
-                            <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500 text-white hover:opacity-90 shadow">
-                                <FaWhatsapp className="text-2xl" aria-hidden="true" />
-                            </span>
-                            <span className="text-white font-medium">082245659898</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="mailto:timothy.yeremia.wewengkang@gmail.com"
-                            aria-label="Send email to timothy.yeremia.wewengkang@gmail.com"
-                            title="Send email"
-                            className="inline-flex items-center gap-3">
-                            <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-red-500 text-white hover:opacity-90 shadow">
-                                <MdEmail className="text-2xl" aria-hidden="true" />
-                            </span>
-                            <span className="text-white font-medium">timothy.yeremia.wewengkang@gmail.com</span>
-                        </a>
-                    </li>
-                </ul>
-                {/* Social Media Icons */}
-                <ul className="flex items-center justify-center gap-6 mt-8">
-                    <li>
-                        <a
-                            href="https://www.facebook.com/Storm.starslash"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Visit Facebook profile"
-                            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-[#1877F2] hover:bg-[#1877F2] hover:text-white transition-colors duration-300"
-                        >
-                            <FaFacebookF className="text-xl" aria-hidden="true" />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.linkedin.com/in/timothy-wewengkang-19647735b"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Visit LinkedIn profile"
-                            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-[#0A66C2] hover:bg-[#0A66C2] hover:text-white transition-colors duration-300"
-                        >
-                            <FaLinkedin className="text-xl" aria-hidden="true" />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://github.com/TimothyYW"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Visit GitHub profile"
-                            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-[#24292e] hover:bg-[#24292e] hover:text-white transition-colors duration-300"
-                        >
-                            <FaGithub className="text-xl" aria-hidden="true" />
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            href="https://www.instagram.com/timothyywewengkang"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Visit Instagram profile"
-                            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white text-[#E4405F] hover:bg-[#E4405F] hover:text-white transition-colors duration-300"
-                        >
-                            <FaInstagram className="text-xl" aria-hidden="true" />
-                        </a>
-                    </li>
-                </ul>
+        <div id="contact" className="section">
+            <div className="container mx-auto px-4 py-24 space-y-16">
+                <div className="space-y-2">
+                    <p className="section-label">&gt; get.in.touch</p>
+                    <h2 className="section-title">Contact Me</h2>
+                    <div className="section-rule" />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-16">
+                    {/* Direct contact */}
+                    <div className="space-y-8">
+                        <p className="text-gray-400 leading-relaxed">
+                            Feel free to reach out — I&apos;m open to project discussions,
+                            collaborations, or just a chat about web development.
+                        </p>
+
+                        <div className="space-y-4">
+                            <a
+                                href="tel:+61438116380"
+                                aria-label="Call 0438 116 380"
+                                className="flex items-center gap-4 group"
+                            >
+                                <span className="contact-icon text-red-500 group-hover:border-red-500">
+                                    <MdPhone className="text-xl" />
+                                </span>
+                                <div>
+                                    <p className="font-mono text-xs text-gray-500">Phone (AU)</p>
+                                    <p className="text-white group-hover:text-red-400 transition-colors duration-200">
+                                        0438 116 380
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a
+                                href="https://wa.me/61438116380"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Open WhatsApp chat"
+                                className="flex items-center gap-4 group"
+                            >
+                                <span className="contact-icon text-emerald-500 group-hover:border-emerald-500">
+                                    <FaWhatsapp className="text-xl" />
+                                </span>
+                                <div>
+                                    <p className="font-mono text-xs text-gray-500">WhatsApp</p>
+                                    <p className="text-white group-hover:text-red-400 transition-colors duration-200">
+                                        +61 438 116 380
+                                    </p>
+                                </div>
+                            </a>
+
+                            <a
+                                href="mailto:timothy.yeremia.wewengkang@gmail.com"
+                                aria-label="Send email"
+                                className="flex items-center gap-4 group"
+                            >
+                                <span className="contact-icon text-red-500 group-hover:border-red-500">
+                                    <MdEmail className="text-xl" />
+                                </span>
+                                <div>
+                                    <p className="font-mono text-xs text-gray-500">Email</p>
+                                    <p className="text-white group-hover:text-red-400 transition-colors duration-200 text-sm">
+                                        timothy.yeremia.wewengkang@gmail.com
+                                    </p>
+                                </div>
+                            </a>
+
+                            <div className="flex items-center gap-4">
+                                <span className="contact-icon text-gray-500">
+                                    <FaMapMarkerAlt className="text-xl" />
+                                </span>
+                                <div>
+                                    <p className="font-mono text-xs text-gray-500">Address</p>
+                                    <p className="text-white text-sm">
+                                        65 Mary Street, Brisbane QLD 4000, Australia
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Social media */}
+                    <div className="space-y-6">
+                        <p className="font-mono text-sm text-gray-500">// social profiles</p>
+                        <div className="flex flex-wrap gap-3">
+                            {[
+                                { icon: <FaFacebookF />,  href: "https://www.facebook.com/Storm.starslash",                   label: "Facebook" },
+                                { icon: <FaLinkedin />,   href: "https://www.linkedin.com/in/timothy-wewengkang-19647735b",  label: "LinkedIn" },
+                                { icon: <FaGithub />,     href: "https://github.com/TimothyYW",                               label: "GitHub"   },
+                                { icon: <FaInstagram />,  href: "https://www.instagram.com/timothyywewengkang",               label: "Instagram"},
+                            ].map(({ icon, href, label }) => (
+                                <a
+                                    key={label}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={`Visit ${label} profile`}
+                                    className="social-btn"
+                                >
+                                    <span className="text-lg">{icon}</span>
+                                    {label}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* Footer */}
+                <div className="pt-12 border-t border-[#1f1f1f] text-center font-mono text-xs text-gray-600">
+                    <p>© {new Date().getFullYear()} Timothy Y Wewengkang — Built with Next.js & Tailwind CSS</p>
+                </div>
             </div>
         </div>
     );

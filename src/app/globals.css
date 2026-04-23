@@ -1,26 +1,223 @@
 @import "tailwindcss";
-/* 
+
+/* =====================================================
+   Design tokens
+   ===================================================== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --red:        #dc2626;
+  --red-hover:  #b91c1c;
+  --red-bright: #ef4444;
+  --red-dim:    rgba(220, 38, 38, 0.1);
+  --red-border: rgba(220, 38, 38, 0.3);
+  --black:      #000000;
+  --surface:    #0d0d0d;
+  --surface-2:  #141414;
+  --border:     #1f1f1f;
+  --border-2:   #2d2d2d;
+  --muted:      #6b7280;
+  --muted-2:    #9ca3af;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* =====================================================
+   Base
+   ===================================================== */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+  background-color: var(--black);
+  color: #fff;
+}
+
+/* Ensure anchor links clear the fixed navbar */
+[id] {
+  scroll-margin-top: 72px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: var(--black); }
+::-webkit-scrollbar-thumb  { background: var(--red); border-radius: 2px; }
+
+/* =====================================================
+   Hero grid background
+   ===================================================== */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(220, 38, 38, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(220, 38, 38, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* =====================================================
+   Sections — shared wrapper + header
+   ===================================================== */
+.section {
+  background-color: var(--black);
+  color: #fff;
+  border-top: 1px solid #111;
+}
+
+.section-label {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+  color: #fff;
+}
+
+.section-rule {
+  width: 3rem;
+  height: 2px;
+  background-color: var(--red);
+}
+
+/* =====================================================
+   Cards
+   ===================================================== */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: rgba(220, 38, 38, 0.5);
+  box-shadow: 0 0 30px rgba(220, 38, 38, 0.12);
+}
+
+/* Icon container inside skill cards */
+.icon-box {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--black);
+  border: 1px solid #222;
+  flex-shrink: 0;
+  transition: border-color 0.3s ease;
+}
+
+.card:hover .icon-box {
+  border-color: rgba(220, 38, 38, 0.4);
+}
+
+/* =====================================================
+   Technology tags
+   ===================================================== */
+.tech-tag {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--red-dim);
+  border: 1px solid var(--red-border);
+  color: #f87171;
+}
+
+/* =====================================================
+   Buttons
+   ===================================================== */
+.btn-primary {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.875rem;
+  background-color: var(--red);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.btn-primary:hover { background-color: var(--red-hover); color: #fff; }
+
+.btn-ghost {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.875rem;
+  border: 1px solid #333;
+  color: var(--muted-2);
+  padding: 0.75rem 2rem;
+  display: inline-block;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.btn-ghost:hover { border-color: var(--red); color: #fff; }
+
+.btn-red-outline {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.875rem;
+  border: 1px solid var(--red);
+  color: var(--red-bright);
+  padding: 0.5rem 1.5rem;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.btn-red-outline:hover { background-color: var(--red); color: #fff; }
+
+/* =====================================================
+   Navbar
+   ===================================================== */
+.nav-scrolled {
+  background-color: rgba(0, 0, 0, 0.95);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-link {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.875rem;
+  color: var(--muted-2);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.nav-link:hover { color: var(--red-bright); }
+
+/* =====================================================
+   Timeline
+   ===================================================== */
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 0.5rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  background-color: var(--red);
+  flex-shrink: 0;
+}
+
+/* =====================================================
+   Contact
+   ===================================================== */
+.contact-icon {
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  transition: border-color 0.2s ease;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  color: var(--muted-2);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.social-btn:hover { border-color: var(--red); color: var(--red-bright); }
