@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import Card from "./Card";
 import { FaHtml5, FaCss3Alt, FaReact, FaGitAlt, FaCode } from "react-icons/fa";
-import { SiJavascript, SiDjango } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { SiJavascript, SiDjango, SiClaude } from "react-icons/si";
 import { AiOutlinePython } from "react-icons/ai";
 
 const iconMap: Record<string, ReactNode> = {
@@ -14,6 +15,8 @@ const iconMap: Record<string, ReactNode> = {
     "R Language": <FaCode className="text-3xl text-red-400" />,
     Git:          <FaGitAlt className="text-3xl text-red-500" />,
     RStudio:      <FaCode className="text-3xl text-cyan-500" />,
+    "VS Code":    <VscVscode className="text-3xl text-blue-500" />,
+    "Claude AI":  <SiClaude className="text-3xl text-orange-400" />,
 };
 
 const descriptionMap: Record<string, string> = {
@@ -26,12 +29,14 @@ const descriptionMap: Record<string, string> = {
     "R Language": "Statistical computing language for data analysis and visualization.",
     Git:          "Distributed version control for tracking code changes and collaborating.",
     RStudio:      "IDE for R, simplifying coding, plotting, and package management.",
+    "VS Code":    "Lightweight but powerful source code editor with rich extension support.",
+    "Claude AI":  "AI assistant used for writing support, grammar correction, and structuring technical discussions.",
 };
 
 const sections = [
     { label: "Front-End",      skills: ["HTML", "CSS", "Javascript", "React"] },
     { label: "Back-End",       skills: ["Django", "R Language", "Python"] },
-    { label: "DevOps & Tools", skills: ["Git", "RStudio"] },
+    { label: "DevOps & Tools", skills: ["Git", "RStudio", "VS Code", "Claude AI"] },
 ];
 
 function MySkills() {

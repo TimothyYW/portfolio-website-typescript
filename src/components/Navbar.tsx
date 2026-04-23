@@ -20,13 +20,13 @@ function Navbar() {
                 </a>
 
                 <div className="flex gap-6 items-center">
-                    <a href="#home"      className="nav-link">./home</a>
-                    <a href="#about"     className="nav-link">./about</a>
-                    <a href="#skills"    className="nav-link">./skills</a>
-                    <a href="#portfolio" className="nav-link">./portfolio</a>
+                    <a href="#home"      className="nav-link">Home</a>
+                    <a href="#about"     className="nav-link">About</a>
+                    <a href="#skills"    className="nav-link">Skills</a>
+                    <a href="#portfolio" className="nav-link">Portfolio</a>
                 </div>
 
-                <a href="#contact" className="btn-red-outline">contact()</a>
+                <a href="#contact" className="btn-red-outline">Contact Me</a>
             </div>
         </nav>
     );
