@@ -10,6 +10,20 @@ interface WorkExperience {
 const experiences: WorkExperience[] = [
     {
         id: 1,
+        title: "Master of IT (Software Development)",
+        company: "Central Queensland University",
+        duration: "Mar 2026 — Mar 2028",
+        location: "Brisbane, QLD, Australia",
+        responsibilities: [
+            "Software Development principles and practices",
+            "Advanced programming and system design",
+            "IT project management and agile methodologies",
+            "Cloud computing and enterprise solutions",
+            "Cybersecurity fundamentals",
+        ],
+    },
+    {
+        id: 2,
         title: "Web Development Student",
         company: "Purwadhika",
         duration: "2025 — 2026",

@@ -26,11 +26,6 @@ function Jumbotron() {
                             Studying frontend and backend development — building fast,
                             functional, and well-designed web experiences.
                         </p>
-                        <div className="font-mono text-sm border-l-2 border-red-600/40 pl-4 space-y-1">
-                            <p className="text-white">Master of IT (Software Development)</p>
-                            <p className="text-red-400">Central Queensland University, Brisbane</p>
-                            <p className="text-gray-600 text-xs">Mar 2026 — Mar 2028</p>
-                        </div>
                         <div className="flex flex-wrap gap-4 pt-2">
                             <a href="#contact"   className="btn-primary">Get In Touch</a>
                             <a href="#portfolio" className="btn-ghost">View Work</a>
