@@ -21,12 +21,15 @@ function Jumbotron() {
                             <br />Wewengkang
                         </h1>
                         <p className="font-mono text-gray-400 text-xs md:text-lg border-l-2 border-red-600 pl-2 md:pl-4">
-                            Web Development Student
+                            IT Software Development Student — CQU, Brisbane
                         </p>
                         {/* Hidden on small screens — not enough space in 2-col layout */}
                         <p className="text-gray-400 max-w-md leading-relaxed hidden sm:block">
-                            Studying frontend and backend development — building fast,
-                            functional, and well-designed web experiences.
+                            Studying IT Software Development at{" "}
+                            <span className="text-red-400 font-semibold">Central Queensland University</span>,
+                            Brisbane — building full-stack web applications, exploring backend systems,
+                            and diving into <span className="text-red-400 font-semibold">AI engineering</span> and
+                            intelligent solution development.
                         </p>
                         <div className="flex flex-wrap gap-2 md:gap-4 pt-1 md:pt-2">
                             <a href="#contact"   className="btn-primary">Get In Touch</a>
