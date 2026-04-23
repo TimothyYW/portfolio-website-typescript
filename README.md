@@ -1,6 +1,6 @@
 # Timothy Y Wewengkang — Portfolio
 
-**Live site:** [portfolio-website-typescript.vercel.app](https://portfolio-website-typescript.vercel.app)
+**Live site:** <a href="https://portfolio-website-typescript.vercel.app" target="_blank">portfolio-website-typescript.vercel.app</a>
 
 ## Screenshots
 
