@@ -126,6 +126,15 @@ body {
 /* =====================================================
    Buttons
    ===================================================== */
+/* Compact buttons on small screens (iPhone) */
+@media (max-width: 639px) {
+  .btn-primary,
+  .btn-ghost {
+    padding: 0.4rem 0.875rem;
+    font-size: 0.7rem;
+  }
+}
+
 .btn-primary {
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.875rem;

@@ -10,34 +10,35 @@ function Jumbotron() {
             <div className="absolute top-24 right-8 w-24 h-24 border-t border-r border-red-600/20" />
             <div className="absolute bottom-12 left-8 w-24 h-24 border-b border-l border-red-600/20" />
 
-            <div className="container mx-auto px-4 py-32">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="container mx-auto px-4 py-20 md:py-32">
+                {/* Always 2 columns — image sits next to text on all screen sizes */}
+                <div className="grid grid-cols-2 gap-3 md:gap-12 items-center">
                     {/* Left — text */}
-                    <div className="space-y-6">
-                        <p className="section-label">&gt; Hello, World!</p>
-                        <h1 className="text-5xl font-bold leading-tight">
+                    <div className="space-y-2 md:space-y-6">
+                        <p className="section-label hidden md:block">&gt; Hello, World!</p>
+                        <h1 className="text-xl sm:text-3xl md:text-5xl font-bold leading-tight">
                             I&apos;m <span className="text-red-500">Timothy</span>
                             <br />Wewengkang
                         </h1>
-                        <p className="font-mono text-gray-400 text-lg border-l-2 border-red-600 pl-4">
+                        <p className="font-mono text-gray-400 text-xs md:text-lg border-l-2 border-red-600 pl-2 md:pl-4">
                             Web Development Student
                         </p>
-                        <p className="text-gray-400 max-w-md leading-relaxed">
+                        {/* Hidden on small screens — not enough space in 2-col layout */}
+                        <p className="text-gray-400 max-w-md leading-relaxed hidden sm:block">
                             Studying frontend and backend development — building fast,
                             functional, and well-designed web experiences.
                         </p>
-                        <div className="flex flex-wrap gap-4 pt-2">
+                        <div className="flex flex-wrap gap-2 md:gap-4 pt-1 md:pt-2">
                             <a href="#contact"   className="btn-primary">Get In Touch</a>
-                            <a href="#portfolio" className="btn-ghost">View Work</a>
+                            <a href="#portfolio" className="btn-ghost hidden sm:inline-block">View Work</a>
                         </div>
                     </div>
 
-                    {/* Right — image */}
+                    {/* Right — image, scales down on mobile */}
                     <div className="flex justify-center">
                         <div className="relative">
-                            {/* Offset shadow frame */}
-                            <div className="absolute inset-0 border border-red-600/30 translate-x-4 translate-y-4" />
-                            <div className="relative w-80 h-80 border border-[#1f1f1f]">
+                            <div className="absolute inset-0 border border-red-600/30 translate-x-1 translate-y-1 md:translate-x-4 md:translate-y-4" />
+                            <div className="relative w-24 h-24 sm:w-48 sm:h-48 md:w-80 md:h-80 border border-[#1f1f1f]">
                                 <Image
                                     src="/thumbnail.png"
                                     alt="Timothy Wewengkang"
