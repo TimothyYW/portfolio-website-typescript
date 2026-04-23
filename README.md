@@ -35,6 +35,12 @@ This is the personal portfolio of Timothy Y Wewengkang — a web development stu
 | Icons | react-icons |
 | Fonts | Geist Sans & Geist Mono |
 
+## Tools & Acknowledgements
+
+| Tool | Purpose |
+|---|---|
+| [Claude](https://claude.ai) by Anthropic | AI assistant — code refinement, writing support, and development guidance |
+
 ## Getting Started
 
 Install dependencies:
