@@ -6,11 +6,7 @@
 
 > Fully responsive across all devices.
 
-| Desktop | Tablet | Mobile (iPhone) |
-|:---:|:---:|:---:|
-| ![Desktop](screenshots/desktop.png) | ![Tablet](screenshots/tablet.png) | ![Mobile](screenshots/mobile.png) |
-
-_To update: capture screenshots and place them in a `/screenshots` folder in the project root._
+![Responsive Test](public/responsive-test.png)
 
 A dark techy personal portfolio website built with **Next.js 16**, **React 19**, and **Tailwind CSS v4**. Styled with a red, black, and white colour scheme.
 
