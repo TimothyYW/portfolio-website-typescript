@@ -45,6 +45,19 @@ const projects: Project[] = [
         githubUrl: "https://github.com/TimothyYW/javascript-game",
         liveUrl: "https://timothyyw.github.io/javascript-game/",
     },
+    {
+        id: 3,
+        title: "Personal Portfolio Website",
+        description: "A modern developer portfolio built with Next.js and TypeScript",
+        situation: "Needed a professional online presence to showcase projects and skills",
+        task: "Design and build a responsive portfolio website using modern web technologies",
+        action: "Built with Next.js, TypeScript, and Tailwind CSS, deployed via GitHub Pages",
+        result: "Delivered a fully responsive, performant portfolio site live on the web",
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+        image: "/thumbnail.png",
+        githubUrl: "https://github.com/TimothyYW/my-website",
+        liveUrl: "https://timothyyw.github.io/my-website/",
+    },
 ];
 
 const starMethods = ["Situation", "Task", "Action", "Result"] as const;
