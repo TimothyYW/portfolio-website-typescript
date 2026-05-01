@@ -53,10 +53,10 @@ const projects: Project[] = [
         task: "Design and build a responsive portfolio website using modern web technologies",
         action: "Built with Next.js, TypeScript, and Tailwind CSS, deployed via GitHub Pages",
         result: "Delivered a fully responsive, performant portfolio site live on the web",
-        technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+        technologies: ["HTML & CSS", "JavaScript"],
         image: "/thumbnail.png",
         githubUrl: "https://github.com/TimothyYW/my-website",
-        liveUrl: "https://timothyyw.github.io/my-website/",
+        liveUrl: "https://timothyyw.github.io/my-website-portfolio/",
     },
 ];
 
