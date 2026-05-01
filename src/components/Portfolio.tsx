@@ -51,7 +51,7 @@ const projects: Project[] = [
         description: "A modern developer portfolio built with Next.js and TypeScript",
         situation: "Needed a professional online presence to showcase projects and skills",
         task: "Design and build a responsive portfolio website using modern web technologies",
-        action: "Built with Next.js, TypeScript, and Tailwind CSS, deployed via GitHub Pages",
+        action: "Built with HTML & CSS, and JavaScript, deployed via GitHub Pages",
         result: "Delivered a fully responsive, performant portfolio site live on the web",
         technologies: ["HTML & CSS", "JavaScript"],
         githubUrl: "https://github.com/TimothyYW/my-website",
