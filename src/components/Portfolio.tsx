@@ -48,7 +48,7 @@ const projects: Project[] = [
     {
         id: 3,
         title: "Personal Portfolio Website",
-        description: "A modern developer portfolio built with Next.js and TypeScript",
+        description: "A modern developer portfolio built with HTML & CSS and JavaScript",
         situation: "Needed a professional online presence to showcase projects and skills",
         task: "Design and build a responsive portfolio website using modern web technologies",
         action: "Built with HTML & CSS, and JavaScript, deployed via GitHub Pages",
