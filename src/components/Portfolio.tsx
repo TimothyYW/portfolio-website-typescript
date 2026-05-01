@@ -13,7 +13,7 @@ interface Project {
     action: string;
     result: string;
     technologies: string[];
-    image: string;
+    image?: string;
     githubUrl?: string;
     liveUrl?: string;
 }
@@ -54,7 +54,6 @@ const projects: Project[] = [
         action: "Built with Next.js, TypeScript, and Tailwind CSS, deployed via GitHub Pages",
         result: "Delivered a fully responsive, performant portfolio site live on the web",
         technologies: ["HTML & CSS", "JavaScript"],
-        image: "/thumbnail.png",
         githubUrl: "https://github.com/TimothyYW/my-website",
         liveUrl: "https://timothyyw.github.io/my-website-portfolio/",
     },
@@ -80,12 +79,14 @@ function Portfolio() {
                         <div key={project.id} className="group card">
                             {/* Thumbnail */}
                             <div className="aspect-video relative overflow-hidden bg-[#111]">
-                                <Image
-                                    src={project.image}
-                                    alt={`Screenshot of ${project.title}`}
-                                    fill
-                                    className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
-                                />
+                                {project.image && (
+                                    <Image
+                                        src={project.image}
+                                        alt={`Screenshot of ${project.title}`}
+                                        fill
+                                        className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                                    />
+                                )}
                             </div>
 
                             <div className="p-6 space-y-4">
