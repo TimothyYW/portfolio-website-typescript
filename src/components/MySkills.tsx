@@ -30,27 +30,34 @@ const descriptionMap: Record<string, string> = {
     Git:          "Distributed version control for tracking code changes and collaborating.",
     RStudio:      "IDE for R, simplifying coding, plotting, and package management.",
     "VS Code":    "Lightweight but powerful source code editor with rich extension support.",
-    "Claude AI":  "AI assistant used for writing support, grammar correction, and structuring technical discussions.",
+    "Claude AI":  "AI assistant for writing support, code review, and structuring technical discussions.",
 };
 
-const sections: { label: string; badge: string; badgeClass: string; skills: string[] }[] = [
+type Category = "Computer Language" | "Tools" | "AI Tools";
+
+interface LevelSection {
+    level: string;
+    badgeClass: string;
+    categories: { label: Category; skills: string[] }[];
+}
+
+const levels: LevelSection[] = [
     {
-        label: "Expert",
-        badge: "Expert",
+        level: "Expert",
         badgeClass: "text-amber-400 border-amber-400/30 bg-amber-400/5",
-        skills: ["HTML", "CSS", "Git", "VS Code"],
+        categories: [
+            { label: "Computer Language", skills: ["HTML", "CSS"] },
+            { label: "Tools",             skills: ["Git", "VS Code"] },
+        ],
     },
     {
-        label: "Intermediate",
-        badge: "Intermediate",
+        level: "Intermediate",
         badgeClass: "text-sky-400 border-sky-400/30 bg-sky-400/5",
-        skills: ["Javascript", "React", "Python", "Django", "R Language", "RStudio", "Claude AI"],
-    },
-    {
-        label: "Beginner",
-        badge: "Beginner",
-        badgeClass: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
-        skills: [],
+        categories: [
+            { label: "Computer Language", skills: ["Javascript", "Python", "R Language", "React", "Django"] },
+            { label: "Tools",             skills: ["RStudio"] },
+            { label: "AI Tools",          skills: ["Claude AI"] },
+        ],
     },
 ];
 
@@ -64,22 +71,30 @@ function MySkills() {
                     <div className="section-rule" />
                 </div>
 
-                {sections.filter(s => s.skills.length > 0).map(({ label, badge, badgeClass, skills }) => (
-                    <div key={label} className="space-y-6">
+                {levels.map(({ level, badgeClass, categories }) => (
+                    <div key={level} className="space-y-8">
                         <div className="flex items-center gap-3">
                             <span className="section-label">//</span>
-                            <h3 className="font-mono text-base font-semibold text-gray-300">{label}</h3>
-                            <span className={`font-mono text-xs border rounded-full px-2 py-0.5 ${badgeClass}`}>{badge}</span>
+                            <h3 className="font-mono text-base font-semibold text-gray-300">{level}</h3>
+                            <span className={`font-mono text-xs border rounded-full px-2 py-0.5 ${badgeClass}`}>{level}</span>
                             <div className="flex-1 h-px bg-[#1f1f1f]" />
                         </div>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {skills.map((skill, i) => (
-                                <Card
-                                    key={i}
-                                    title={skill}
-                                    icon={iconMap[skill] ?? <FaCode className="text-3xl text-gray-400" />}
-                                    description={descriptionMap[skill]}
-                                />
+
+                        <div className="space-y-8 pl-4 border-l border-[#1f1f1f]">
+                            {categories.map(({ label, skills }) => (
+                                <div key={label} className="space-y-4">
+                                    <p className="font-mono text-xs text-gray-500 uppercase tracking-widest">{label}</p>
+                                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                                        {skills.map((skill, i) => (
+                                            <Card
+                                                key={i}
+                                                title={skill}
+                                                icon={iconMap[skill] ?? <FaCode className="text-3xl text-gray-400" />}
+                                                description={descriptionMap[skill]}
+                                            />
+                                        ))}
+                                    </div>
+                                </div>
                             ))}
                         </div>
                     </div>
