@@ -33,10 +33,25 @@ const descriptionMap: Record<string, string> = {
     "Claude AI":  "AI assistant used for writing support, grammar correction, and structuring technical discussions.",
 };
 
-const sections = [
-    { label: "Front-End",      skills: ["HTML", "CSS", "Javascript", "React"] },
-    { label: "Back-End",       skills: ["Django", "R Language", "Python"] },
-    { label: "DevOps & Tools", skills: ["Git", "RStudio", "VS Code", "Claude AI"] },
+const sections: { label: string; badge: string; badgeClass: string; skills: string[] }[] = [
+    {
+        label: "Expert",
+        badge: "Expert",
+        badgeClass: "text-amber-400 border-amber-400/30 bg-amber-400/5",
+        skills: ["HTML", "CSS", "Git", "VS Code"],
+    },
+    {
+        label: "Intermediate",
+        badge: "Intermediate",
+        badgeClass: "text-sky-400 border-sky-400/30 bg-sky-400/5",
+        skills: ["Javascript", "React", "Python", "Django", "R Language", "RStudio", "Claude AI"],
+    },
+    {
+        label: "Beginner",
+        badge: "Beginner",
+        badgeClass: "text-emerald-400 border-emerald-400/30 bg-emerald-400/5",
+        skills: [],
+    },
 ];
 
 function MySkills() {
@@ -49,11 +64,12 @@ function MySkills() {
                     <div className="section-rule" />
                 </div>
 
-                {sections.map(({ label, skills }) => (
+                {sections.filter(s => s.skills.length > 0).map(({ label, badge, badgeClass, skills }) => (
                     <div key={label} className="space-y-6">
                         <div className="flex items-center gap-3">
                             <span className="section-label">//</span>
                             <h3 className="font-mono text-base font-semibold text-gray-300">{label}</h3>
+                            <span className={`font-mono text-xs border rounded-full px-2 py-0.5 ${badgeClass}`}>{badge}</span>
                             <div className="flex-1 h-px bg-[#1f1f1f]" />
                         </div>
                         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
