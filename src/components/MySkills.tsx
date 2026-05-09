@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import Card from "./Card";
 import { FaHtml5, FaCss3Alt, FaReact, FaGitAlt, FaCode } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
-import { SiJavascript, SiDjango, SiClaude, SiTailwindcss } from "react-icons/si";
+import { SiJavascript, SiDjango, SiClaude, SiTailwindcss, SiNextdotjs } from "react-icons/si";
 import { AiOutlinePython } from "react-icons/ai";
 
 type Level = "Expert" | "Intermediate" | "Beginner";
@@ -21,6 +21,7 @@ const iconMap: Record<string, ReactNode> = {
     React:        <FaReact className="text-3xl text-sky-400" />,
     Django:       <SiDjango className="text-3xl text-green-500" />,
     Tailwind:     <SiTailwindcss className="text-3xl text-cyan-400" />,
+    "Next.js":    <SiNextdotjs className="text-3xl text-white" />,
     Git:          <FaGitAlt className="text-3xl text-red-500" />,
     RStudio:      <FaCode className="text-3xl text-cyan-500" />,
     "VS Code":    <VscVscode className="text-3xl text-blue-500" />,
@@ -36,6 +37,7 @@ const descriptionMap: Record<string, string> = {
     React:        "Component-based library for building modern user interfaces.",
     Django:       "High-level Python web framework for rapid backend development.",
     Tailwind:     "Utility-first CSS framework for building custom designs without leaving HTML.",
+    "Next.js":    "React framework for building full-stack web apps with server-side rendering and routing.",
     Git:          "Distributed version control for tracking code changes and collaborating.",
     RStudio:      "IDE for R, simplifying coding, plotting, and package management.",
     "VS Code":    "Lightweight but powerful source code editor with rich extension support.",
@@ -58,6 +60,7 @@ const categories: { label: string; skills: Skill[] }[] = [
         skills: [
             { name: "Django",   level: "Intermediate" },
             { name: "Tailwind", level: "Intermediate" },
+            { name: "Next.js",  level: "Beginner" },
         ],
     },
     {
