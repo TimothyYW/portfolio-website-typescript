@@ -2,14 +2,14 @@ import type { ReactNode } from "react";
 import Card from "./Card";
 import { FaHtml5, FaCss3Alt, FaReact, FaGitAlt, FaCode } from "react-icons/fa";
 import { VscVscode } from "react-icons/vsc";
-import { SiJavascript, SiDjango, SiClaude } from "react-icons/si";
+import { SiJavascript, SiDjango, SiClaude, SiTailwindcss } from "react-icons/si";
 import { AiOutlinePython } from "react-icons/ai";
 
 type Level = "Expert" | "Intermediate" | "Beginner";
 
 interface Skill {
     name: string;
-    level: Level;
+    level?: Level;
 }
 
 const iconMap: Record<string, ReactNode> = {
@@ -20,6 +20,7 @@ const iconMap: Record<string, ReactNode> = {
     "R Language": <FaCode className="text-3xl text-red-400" />,
     React:        <FaReact className="text-3xl text-sky-400" />,
     Django:       <SiDjango className="text-3xl text-green-500" />,
+    Tailwind:     <SiTailwindcss className="text-3xl text-cyan-400" />,
     Git:          <FaGitAlt className="text-3xl text-red-500" />,
     RStudio:      <FaCode className="text-3xl text-cyan-500" />,
     "VS Code":    <VscVscode className="text-3xl text-blue-500" />,
@@ -33,7 +34,8 @@ const descriptionMap: Record<string, string> = {
     Python:       "Versatile language for web backends, data science, and scripting.",
     "R Language": "Statistical computing language for data analysis and visualization.",
     React:        "Component-based library for building modern user interfaces.",
-    Django:       "High-level Python framework for rapid backend development.",
+    Django:       "High-level Python web framework for rapid backend development.",
+    Tailwind:     "Utility-first CSS framework for building custom designs without leaving HTML.",
     Git:          "Distributed version control for tracking code changes and collaborating.",
     RStudio:      "IDE for R, simplifying coding, plotting, and package management.",
     "VS Code":    "Lightweight but powerful source code editor with rich extension support.",
@@ -52,10 +54,16 @@ const categories: { label: string; skills: Skill[] }[] = [
         ],
     },
     {
-        label: "Frameworks & Libraries",
+        label: "Frameworks",
         skills: [
-            { name: "React",  level: "Intermediate" },
-            { name: "Django", level: "Intermediate" },
+            { name: "Django",   level: "Intermediate" },
+            { name: "Tailwind", level: "Intermediate" },
+        ],
+    },
+    {
+        label: "Libraries",
+        skills: [
+            { name: "React", level: "Intermediate" },
         ],
     },
     {
@@ -63,13 +71,13 @@ const categories: { label: string; skills: Skill[] }[] = [
         skills: [
             { name: "Git",     level: "Expert" },
             { name: "VS Code", level: "Expert" },
-            { name: "RStudio", level: "Intermediate" },
+            { name: "RStudio", level: "Beginner" },
         ],
     },
     {
         label: "AI Tools",
         skills: [
-            { name: "Claude AI", level: "Intermediate" },
+            { name: "Claude AI" },
         ],
     },
 ];
